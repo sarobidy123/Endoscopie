@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Détail de la Prescription - EndoPortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary": "#572100",
+                "secondary-fixed": "#d6e3ff",
+                "on-surface": "#191c1e",
+                "on-error": "#ffffff",
+                "tertiary-fixed-dim": "#ffb691",
+                "on-surface-variant": "#424751",
+                "on-secondary-fixed-variant": "#32476a",
+                "on-tertiary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "on-primary-fixed": "#001b3d",
+                "on-primary": "#ffffff",
+                "surface-container": "#edeef1",
+                "on-error-container": "#93000a",
+                "surface-variant": "#e2e2e6",
+                "on-primary-container": "#8db8ff",
+                "on-primary-fixed-variant": "#00468b",
+                "primary-fixed-dim": "#a9c7ff",
+                "surface-dim": "#d9dadd",
+                "on-secondary-fixed": "#011b3c",
+                "surface-bright": "#f9f9fd",
+                "on-tertiary-fixed-variant": "#793100",
+                "on-tertiary-fixed": "#341100",
+                "error-container": "#ffdad6",
+                "on-secondary-container": "#475c80",
+                "surface-tint": "#295ea5",
+                "primary-fixed": "#d6e3ff",
+                "primary-container": "#00478d",
+                "outline": "#737782",
+                "inverse-surface": "#2e3133",
+                "error": "#ba1a1a",
+                "on-tertiary-container": "#ff9f6c",
+                "surface-container-highest": "#e2e2e6",
+                "secondary-container": "#c0d5ff",
+                "secondary": "#4a5f83",
+                "inverse-on-surface": "#f0f0f4",
+                "background": "#f9f9fd",
+                "outline-variant": "#c2c6d2",
+                "tertiary-container": "#7a3201",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f3f3f7",
+                "on-background": "#191c1e",
+                "inverse-primary": "#a9c7ff",
+                "surface-container-high": "#e7e8eb",
+                "tertiary-fixed": "#ffdbcb",
+                "surface": "#f9f9fd",
+                "secondary-fixed-dim": "#b2c7f0",
+                "primary": "#003164"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-gap": "1.5rem",
+                "sidebar-width": "16rem",
+                "header-height": "4rem",
+                "inline-gap": "1rem",
+                "container-padding": "2rem"
+            },
+            "fontFamily": {
+                "body-main": ["Inter"],
+                "headline-section": ["Manrope"],
+                "nav-item": ["Inter"],
+                "label-caps": ["Inter"],
+                "display-hero": ["Manrope"]
+            },
+            "fontSize": {
+                "body-main": ["0.875rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "headline-section": ["1.125rem", {"lineHeight": "1.5", "fontWeight": "700"}],
+                "nav-item": ["0.875rem", {"lineHeight": "1.25", "fontWeight": "500"}],
+                "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "display-hero": ["1.875rem", {"lineHeight": "1.2", "letterSpacing": "-0.025em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-main text-on-surface selection:bg-secondary-container" data-screen="SCREEN_74">
+<!-- Main Content (Sidebar & Header injected by router) -->
+<main class="ml-64 min-h-screen bg-surface pt-20">
+<!-- Back Button -->
+<div class="px-8 py-4 bg-surface border-b border-outline-variant/10">
+<a class="inline-flex px-6 py-3 rounded-lg border border-outline-variant/20 text-on-surface-variant hover:text-primary hover:border-primary transition-all items-center gap-2" href="{{DATA:SCREEN:SCREEN_75}}">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+<span class="font-semibold">Retour au fil de prescription</span>
+</a>
+</div>
+<div class="p-container-padding max-w-[1400px] mx-auto space-y-stack-gap">
+<!-- Patient Header Summary (Consistent with SCREEN_138 structure) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Patient Identity Card -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 flex gap-6 items-start shadow-sm">
+<div class="h-20 w-20 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Portrait du Patient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl_V0DN3M49Y3hcB4s9_bdX4Y9Kdtu_Pit9uWverBSlawxGK2cwCLduOxPsuK1AKtXb_Kt4SmyXAxWx0D3QQp1NIocpNdBDEVE8hf7ipWU900A4jTAIwFXaSlD0bXaUhsPZtqM5nMgrNX6C54q3u35Zw6msFUYFlOboBiZ_JUigFASoapcW2vO8xvJTHZ4Qs9FaIB9nD0qGWw_h_0sKr-u0LO51Jv3r6wFu3gh6k5T8dXIv9eNUBc8zx14nmF-RyZQIv-IvTdvTYI"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-display-hero text-2xl font-extrabold text-on-surface tracking-tight">MARIE LEFEBVRE</h3>
+<p class="text-on-surface-variant font-medium flex items-center gap-2 text-sm mt-0.5">
+<span class="text-primary font-bold">ID: #PX-8829-01</span> • Femme, 72 ans • A+
+                                </p>
+</div>
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-[10px] font-black tracking-widest flex items-center gap-1 uppercase shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+                                STAT
+                            </span>
+</div>
+<div class="mt-4 flex gap-12">
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Poids</p>
+<p class="text-sm font-bold">64.5 kg</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Dernier repas</p>
+<p class="text-sm font-bold text-error">À jeun (04:00 AM)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Prescribing Doc Info Card -->
+<div class="lg:col-span-4 bg-secondary-fixed p-6 rounded-xl flex flex-col justify-between border border-outline-variant/10 shadow-sm">
+<div>
+<p class="text-[10px] font-bold text-on-secondary-fixed-variant uppercase tracking-wider mb-1">MÉDECIN PRESCRIPTEUR</p>
+<p class="font-headline-section font-bold text-on-secondary-fixed text-lg">Dr. Antoine Moreau</p>
+<p class="text-xs text-on-secondary-fixed-variant font-medium">Service de Gastro-entérologie</p>
+</div>
+<div class="mt-4">
+<p class="text-[10px] font-bold text-on-secondary-fixed-variant uppercase tracking-wider mb-1">EXAMEN DEMANDÉ</p>
+<p class="text-sm font-bold text-on-secondary-fixed leading-tight">Fibroscopie Oeso-Gastro-Duodénale</p>
+</div>
+</div>
+</section>
+<!-- Anesthesia Choice -->
+<section class="mb-8 rounded-3xl border-2 border-primary/20 bg-gradient-to-r from-primary/10 via-white to-tertiary/10 px-6 py-5 shadow-md shadow-primary/5" data-anesthesia-toggle="planification">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div class="max-w-2xl">
+<div class="flex items-center gap-3 mb-2">
+<span class="inline-flex items-center gap-1 rounded-full bg-error/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-error">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+Obligatoire
+</span>
+<p class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Choix d'anesthésie</p>
+</div>
+<p class="text-base font-semibold text-on-surface leading-snug">Sélectionnez l'anesthésie avant de finaliser la planification du créneau.</p>
+<p class="text-sm text-on-surface-variant font-medium mt-2">Ce choix conditionne la suite du parcours et doit rester visible à tout moment.</p>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant text-right">Sélection requise</p>
+<div class="flex items-center rounded-2xl border border-outline-variant/30 bg-surface-container p-1.5 shadow-inner">
+<button class="anesthesia-option min-w-[11rem] px-6 py-3 rounded-xl text-sm font-semibold bg-white text-primary shadow-sm border border-outline-variant/10" type="button">Anesthésie locale</button>
+<button class="anesthesia-option min-w-[11rem] px-6 py-3 rounded-xl text-sm font-bold text-on-surface-variant hover:text-on-surface transition-colors" type="button">Anesthésie générale</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Back Button -->
+<div class="mb-6 flex items-center justify-between">
+<a class="px-6 py-3 rounded-lg border border-outline-variant/20 text-on-surface-variant hover:text-primary hover:border-primary transition-all flex items-center gap-2" href="{{DATA:SCREEN:SCREEN_75}}">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+<span class="font-semibold">Retour au fil de prescription</span>
+</a>
+</div>
+<!-- Main Content: Split into two columns -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Context & Alerts (like in SCREEN_138) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Clinical Context -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+<h4 class="font-headline-section font-bold text-on-surface mb-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="clinical_notes">clinical_notes</span> 
+                            Contexte Clinique
+                        </h4>
+<div class="space-y-5">
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/10">
+<p class="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">MOTIF DE L'EXAMEN</p>
+<p class="text-sm text-on-surface font-medium leading-relaxed">Hémorragie digestive haute - Suspicion d'ulcère gastrique.</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-2">HISTORIQUE MÉDICAL</p>
+<ul class="text-sm space-y-2 text-on-surface-variant font-medium">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                                        Hypertension chronique
+                                    </li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                                        Traitement anticoagulant (interrompu)
+                                    </li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                                        Anémie ferriprive
+                                    </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Clinical Alerts -->
+<div class="bg-tertiary-fixed p-6 rounded-xl border-l-4 border-tertiary shadow-sm">
+<h4 class="font-headline-section font-bold text-on-tertiary-fixed mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="assignment_late">assignment_late</span> 
+                            Alertes Cliniques
+                        </h4>
+<p class="text-sm text-on-tertiary-fixed-variant leading-relaxed font-semibold">
+                            Surveiller étroitement la saturation en O2. Réaction indésirable signalée au propofol en 2019.
+                        </p>
+</div>
+</div>
+<!-- Right Column: Planning Form -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-md">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h4 class="font-headline-section font-extrabold text-2xl text-on-surface tracking-tight">Planification du créneau</h4>
+<p class="text-sm text-on-surface-variant mt-1 font-medium">Étape 2 sur 3 : Sélection des ressources</p>
+</div>
+<span class="text-[10px] font-black bg-surface-container px-3 py-1 rounded-full uppercase tracking-widest text-on-surface-variant">PLANNING</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider px-1">CHIRURGIEN SÉLECTIONNÉ</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border-b-2 border-outline-variant focus:border-primary px-4 py-3.5 rounded-t-lg text-sm font-bold text-on-surface transition-all focus:ring-0">
+<option>Dr. Elena Rodriguez</option>
+<option>Dr. Marc Vernet</option>
+<option>Dr. Sarah Jenkins</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider px-1">SALLE D'OPÉRATION (BLOC)</label>
+<div class="flex gap-2 h-[48px]">
+<button class="flex-1 text-xs font-black rounded-lg border-2 border-primary text-primary bg-primary-container/10 transition-all">Bloc 1</button>
+<button class="flex-1 text-xs font-bold rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all">Bloc 2</button>
+<button class="flex-1 text-xs font-bold rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all">Bloc 3</button>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider px-1">CRÉNEAUX DISPONIBLES (AUJOURD'HUI, 24 OCT.)</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<button class="py-3.5 rounded-lg bg-surface-container text-on-surface-variant text-sm font-bold opacity-40 cursor-not-allowed">08:30</button>
+<button class="py-3.5 rounded-lg bg-primary text-on-primary text-sm font-bold shadow-lg shadow-primary/20 ring-2 ring-primary ring-offset-2 transform scale-105 transition-all">09:15</button>
+<button class="py-3.5 rounded-lg bg-surface-container-low border border-outline-variant/10 text-on-surface text-sm font-bold hover:bg-primary-container/10 hover:text-primary transition-all">10:00</button>
+<button class="py-3.5 rounded-lg bg-surface-container-low border border-outline-variant/10 text-on-surface text-sm font-bold hover:bg-primary-container/10 hover:text-primary transition-all">11:30</button>
+<button class="py-3.5 rounded-lg bg-surface-container-low border border-outline-variant/10 text-on-surface text-sm font-bold hover:bg-primary-container/10 hover:text-primary transition-all">13:45</button>
+<button class="py-3.5 rounded-lg bg-surface-container-low border border-outline-variant/10 text-on-surface text-sm font-bold hover:bg-primary-container/10 hover:text-primary transition-all">14:30</button>
+<button class="py-3.5 rounded-lg bg-surface-container-low border border-outline-variant/10 text-on-surface text-sm font-bold hover:bg-primary-container/10 hover:text-primary transition-all">15:15</button>
+<button class="py-3.5 rounded-lg bg-surface-container-low border border-outline-variant/10 text-on-surface text-sm font-bold hover:bg-primary-container/10 hover:text-primary transition-all">16:00</button>
+</div>
+</div>
+<!-- Observations Text Area (shared with Demande CPA) -->
+<div class="space-y-3 mt-8">
+    <label class="text-[10px] font-black text-on-surface-variant uppercase tracking-[0.1em]">Observations cliniques &amp; détails de l'intervention</label>
+    <div class="relative">
+        <div class="bg-surface-container-low rounded-xl p-1 min-h-[300px]">
+            <textarea class="w-full h-full min-h-[290px] bg-transparent border-none focus:ring-0 px-5 py-5 text-sm font-medium text-on-surface placeholder:text-on-surface-variant/40 resize-none leading-relaxed" placeholder="Saisissez les antécédents, l'indication chirurgicale et les observations particulières..."></textarea>
+            <div class="absolute bottom-5 right-5 flex items-center gap-2 text-on-surface-variant/50">
+                <span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest">Mode Édition</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Meta Info Cards Grid (shared) -->
+<div class="grid grid-cols-3 gap-4 mt-6">
+    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-3 block text-xl" data-icon="person_search">person_search</span>
+        <p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Demandeur</p>
+        <p class="text-sm font-black text-on-surface">Dr. Antoine Moreau</p>
+        <p class="text-[10px] text-on-surface-variant font-medium mt-0.5">Service de Gastro-entérologie</p>
+    </div>
+    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-3 block text-xl font-bold" data-icon="priority_high">priority_high</span>
+        <p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Urgence</p>
+        <p class="text-sm font-black text-on-surface">Standard (48h)</p>
+    </div>
+    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-3 block text-xl" data-icon="event_repeat">calendar_today</span>
+        <p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Date souhaitée</p>
+        <p class="text-sm font-black text-on-surface">12 Oct. 2023</p>
+    </div>
+</div>
+
+<!-- Confirmation Section -->
+<div class="mt-10 p-6 rounded-xl bg-surface border border-dashed border-outline-variant/40 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="h-14 w-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">event_available</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary uppercase tracking-tighter">RENDEZ-VOUS SÉLECTIONNÉ</p>
+<p class="text-base font-extrabold text-on-surface">Jeudi 24 oct. • 09:15 • Bloc 1</p>
+<p class="text-xs text-on-surface-variant font-medium">Anesthésie locale sélectionnée</p>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-6 py-3 rounded-lg text-sm font-bold text-on-surface-variant hover:bg-surface-container-high transition-all">Annuler</button>
+<button class="flex-[2] md:flex-none px-10 py-3 rounded-lg text-sm font-bold text-on-primary bg-primary shadow-lg shadow-primary/30 hover:scale-[1.02] active:scale-95 transition-all text-center disabled:opacity-45 disabled:cursor-not-allowed disabled:hover:scale-100" type="button" data-final-action disabled>
+                                    Confirmer le RDV
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Decor -->
+<footer class="pt-12 pb-8 flex flex-col items-center gap-4 opacity-40">
+<div class="flex gap-3">
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+<div class="w-12 h-1 bg-outline-variant rounded-full"></div>
+</div>
+<p class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Système de Planification Chirurgicale v4.2</p>
+</footer>
+</div>
+</main>
+<script src="../navigation-router.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+        // Anesthesia toggle functionality with navigation
+        const toggle = document.querySelector('[data-anesthesia-toggle="planification"]');
+        if (toggle) {
+            const buttons = toggle.querySelectorAll('.anesthesia-option');
+            const finalAction = document.querySelector('[data-final-action]');
+            if (buttons.length === 2) {
+                const localeBtn = buttons[0];
+                const generaleBtn = buttons[1];
+
+                const activateSelection = (activeButton, inactiveButton) => {
+                    activeButton.classList.add('bg-white', 'border', 'border-outline-variant/10', 'shadow-sm');
+                    activeButton.classList.remove('text-on-surface-variant', 'hover:text-on-surface');
+                    inactiveButton.classList.remove('bg-white', 'border', 'border-outline-variant/10', 'shadow-sm');
+                    inactiveButton.classList.add('text-on-surface-variant', 'hover:text-on-surface');
+                    if (finalAction) {
+                        finalAction.disabled = false;
+                    }
+                };
+      
+                localeBtn.addEventListener('click', function() {
+                    // Anesthésie locale - stay on planification page
+                    activateSelection(localeBtn, generaleBtn);
+                });
+      
+                generaleBtn.addEventListener('click', function() {
+                    // Anesthésie générale - navigate to demande CPA
+                    window.location.href = '../demande_de_cpa_fid_le_l_image/code.html';
+                });
+            }
+    }
+  });
+</script>
+</body></html>

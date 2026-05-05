@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EndoCare Pro - Liste des Patients</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#edeef1",
+                        "surface-container-low": "#f3f3f7",
+                        "primary-container": "#00478d",
+                        "outline-variant": "#c2c6d2",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary": "#ffffff",
+                        "primary": "#003164",
+                        "background": "#f9f9fd",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#295ea5",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary-container": "#ff9f6c",
+                        "tertiary-container": "#7a3201",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#011b3c",
+                        "surface-variant": "#e2e2e6",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#191c1e",
+                        "inverse-surface": "#2e3133",
+                        "outline": "#737782",
+                        "on-primary-container": "#8db8ff",
+                        "primary-fixed-dim": "#a9c7ff",
+                        "on-primary-fixed": "#001b3d",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9fd",
+                        "tertiary": "#572100",
+                        "inverse-on-surface": "#f0f0f4",
+                        "error": "#ba1a1a",
+                        "secondary": "#4a5f83",
+                        "on-secondary-container": "#475c80",
+                        "on-primary-fixed-variant": "#00468b",
+                        "secondary-fixed-dim": "#b2c7f0",
+                        "surface-container-highest": "#e2e2e6",
+                        "on-tertiary-fixed-variant": "#793100",
+                        "surface-container-high": "#e7e8eb",
+                        "secondary-container": "#c0d5ff",
+                        "on-secondary-fixed-variant": "#32476a",
+                        "on-surface-variant": "#424751",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f9f9fd",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-dim": "#d9dadd",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "inverse-primary": "#a9c7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "2rem",
+                        "sidebar-width": "16rem",
+                        "stack-gap": "1.5rem",
+                        "inline-gap": "1rem",
+                        "header-height": "4rem"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-main": ["Inter"],
+                        "display-hero": ["Manrope"],
+                        "nav-item": ["Inter"],
+                        "headline-section": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-main": ["0.875rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-hero": ["1.875rem", {"lineHeight": "1.2", "letterSpacing": "-0.025em", "fontWeight": "800"}],
+                        "nav-item": ["0.875rem", {"lineHeight": "1.25", "fontWeight": "500"}],
+                        "headline-section": ["1.125rem", {"lineHeight": "1.5", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #00478D 0%, #005EB8 100%);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-main text-on-background min-h-screen" data-screen="SCREEN_30">
+<!-- SideNavBar -->
+<aside id="endoscopy-shared-sidebar" class="fixed left-0 top-0 h-full w-64 z-50 bg-slate-100/50 dark:bg-slate-900/50 backdrop-blur-xl surface-container-low no-border flex flex-col p-4 space-y-2">
+    <div class="flex items-center gap-3 mb-8 px-2">
+        <div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-white" data-icon="clinical_notes">clinical_notes</span>
+        </div>
+        <div>
+            <h1 class="font-manrope font-extrabold text-blue-800 dark:text-blue-300 leading-tight">Unité Endoscopie</h1>
+            <p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">personnel de service endoscopie</p>
+        </div>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800/80 rounded-lg transition-all font-inter text-sm font-semibold" href="{{DATA:SCREEN:SCREEN_101}}">
+            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+            <span class="">Tableau de bord</span>
+        </a>
+        <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800/80 rounded-lg transition-all font-inter text-sm font-semibold" href="{{DATA:SCREEN:SCREEN_75}}">
+            <span class="material-symbols-outlined" data-icon="medication">medication</span>
+            <span class="">Fil de prescription</span>
+        </a>
+        <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800/80 rounded-lg transition-all font-inter text-sm font-semibold" href="{{DATA:SCREEN:SCREEN_109}}">
+            <span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+            <span class="">Agenda / Rendez-vous</span>
+        </a>
+        <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800/80 rounded-lg transition-all font-inter text-sm font-semibold" href="{{DATA:SCREEN:SCREEN_30}}">
+            <span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+            <span class="">Check-lists</span>
+        </a>
+        <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800/80 rounded-lg transition-all font-inter text-sm font-semibold" href="{{DATA:SCREEN:SCREEN_116}}">
+            <span class="material-symbols-outlined" data-icon="description">description</span>
+            <span>Rapport</span>
+        </a>
+        <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800/80 rounded-lg transition-all font-inter text-sm font-semibold" href="{{DATA:SCREEN:SCREEN_125}}">
+            <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+            <span>Archives</span>
+        </a>
+    </nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-8 h-16 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300 ease-in-out font-manrope">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-semibold text-blue-900">Liste des Patients - Endoscopie</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-b-2 border-transparent focus:border-primary focus:ring-0 transition-all text-sm w-64 font-body-main" placeholder="Rechercher un patient..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:text-blue-700 transition-all rounded-full hover:bg-slate-100">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-blue-700 transition-all rounded-full hover:bg-slate-100">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-blue-700 transition-all rounded-full hover:bg-slate-100">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Patient Content -->
+<div class="p-8 max-w-[56rem] mx-auto w-full">
+<!-- Quick Stats / Filters -->
+<div class="flex gap-4 mb-8 overflow-x-auto pb-2">
+<div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex-1 min-w-[140px]">
+<p class="text-xs font-label-caps text-slate-400 mb-1">TOTAL AUJOURD'HUI</p>
+<p class="text-2xl font-display-hero text-blue-900">12</p>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex-1 min-w-[140px]">
+<p class="text-xs font-label-caps text-slate-400 mb-1">EN ATTENTE</p>
+<p class="text-2xl font-display-hero text-orange-600">5</p>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex-1 min-w-[140px]">
+<p class="text-xs font-label-caps text-slate-400 mb-1">EN COURS</p>
+<p class="text-2xl font-display-hero text-blue-600">2</p>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex-1 min-w-[140px]">
+<p class="text-xs font-label-caps text-slate-400 mb-1">TERMINÉ</p>
+<p class="text-2xl font-display-hero text-green-600">5</p>
+</div>
+</div>
+<!-- Main Table Card -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+<h3 class="font-headline-section text-blue-900">Programmation du Jour</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-white transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span> Filtrer
+                        </button>
+<button class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-white transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Exporter
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 text-xs font-label-caps text-slate-500">Nom du Patient</th>
+<th class="px-6 py-4 text-xs font-label-caps text-slate-500">ID Patient</th>
+<th class="px-6 py-4 text-xs font-label-caps text-slate-500">Type d'Examen</th>
+<th class="px-6 py-4 text-xs font-label-caps text-slate-500 text-center">Heure prévue</th>
+<th class="px-6 py-4 text-xs font-label-caps text-slate-500">Statut</th>
+<th class="px-6 py-4 text-xs font-label-caps text-slate-500 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Patient Row 1 -->
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="px-6 py-4"><a class="flex items-center gap-3 group/row" href="{{DATA:SCREEN:SCREEN_67}}"> <div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">ML</div> <div> <p class="font-bold text-slate-800 text-sm group-hover/row:text-primary transition-colors">MARIE-LOUISE Dupont</p> <p class="text-[11px] text-slate-400">64 ans • Femme</p> </div> </a></td>
+<td class="px-6 py-4 text-sm font-mono text-slate-500">#END-2023-8902</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold rounded uppercase tracking-wider">Coloscopie</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-700 text-center">08:30</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-xs font-semibold text-green-700">Terminé</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-blue-900 hover:bg-blue-100 rounded-lg transition-all" title="Voir dossier">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+</button>
+</td>
+</tr>
+<!-- Patient Row 2 -->
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="px-6 py-4"><a class="flex items-center gap-3 group/row" href="{{DATA:SCREEN:SCREEN_67}}"> <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-xs">JR</div> <div> <p class="font-bold text-slate-800 text-sm group-hover/row:text-primary transition-colors">JEAN-RENE Bernard</p> <p class="text-[11px] text-slate-400">52 ans • Homme</p> </div> </a></td>
+<td class="px-6 py-4 text-sm font-mono text-slate-500">#END-2023-9011</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-purple-100 text-purple-800 text-[10px] font-bold rounded uppercase tracking-wider">Gastroscopie</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-700 text-center">09:45</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+<span class="text-xs font-semibold text-blue-700">En cours</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-blue-900 hover:bg-blue-100 rounded-lg transition-all" title="Voir dossier">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+</button>
+</td>
+</tr>
+<!-- Patient Row 3 (Focus Row) -->
+<tr class="hover:bg-blue-50/30 transition-colors bg-blue-50/10">
+<td class="px-6 py-4"><a class="flex items-center gap-3 group/row" href="{{DATA:SCREEN:SCREEN_67}}"> <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-xs">SM</div> <div> <p class="font-bold text-slate-800 text-sm group-hover/row:text-primary transition-colors">SOPHIE Morel</p> <p class="text-[11px] text-slate-400">41 ans • Femme</p> </div> </a></td>
+<td class="px-6 py-4 text-sm font-mono text-slate-500">#END-2023-9015</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold rounded uppercase tracking-wider">Coloscopie</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-700 text-center">11:00</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-orange-400"></div>
+<span class="text-xs font-semibold text-orange-700">En attente</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<a class="primary-gradient text-white text-[10px] px-3 py-1.5 rounded-lg shadow-sm hover:shadow-md transition-all font-bold flex items-center gap-1.5" href="{{DATA:SCREEN:SCREEN_71}}"><span class="material-symbols-outlined text-[14px]" data-icon="playlist_add_check">playlist_add_check</span> Démarrer check-list</a>
+<button class="p-2 text-slate-400 hover:text-blue-900 transition-all rounded-lg">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Patient Row 4 -->
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="px-6 py-4"><a class="flex items-center gap-3 group/row" href="{{DATA:SCREEN:SCREEN_67}}"> <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-xs">AH</div> <div> <p class="font-bold text-slate-800 text-sm group-hover/row:text-primary transition-colors">ALAIN Herbert</p> <p class="text-[11px] text-slate-400">76 ans • Homme</p> </div> </a></td>
+<td class="px-6 py-4 text-sm font-mono text-slate-500">#END-2023-9022</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-bold rounded uppercase tracking-wider">Coloscopie</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-700 text-center">11:45</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-orange-400"></div>
+<span class="text-xs font-semibold text-orange-700">En attente</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-3 py-1.5 text-[10px] font-bold rounded-lg border border-slate-200 text-slate-400 cursor-not-allowed">
+                                            Démarrer
+                                        </button>
+<button class="p-2 text-slate-400 hover:text-blue-900 transition-all rounded-lg">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-slate-100 flex items-center justify-between">
+<p class="text-xs text-slate-500">Affichage de 4 patients sur 12 au total</p>
+<div class="flex items-center gap-2">
+<button class="p-1 text-slate-400 hover:text-blue-900"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<div class="flex gap-1">
+<span class="w-6 h-6 flex items-center justify-center text-xs font-bold primary-gradient text-white rounded">1</span>
+<span class="w-6 h-6 flex items-center justify-center text-xs font-medium text-slate-400 rounded hover:bg-slate-100 cursor-pointer">2</span>
+<span class="w-6 h-6 flex items-center justify-center text-xs font-medium text-slate-400 rounded hover:bg-slate-100 cursor-pointer">3</span>
+</div>
+<button class="p-1 text-slate-400 hover:text-blue-900"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Bento Card Grid for Alerts/Insights -->
+<div class="grid grid-cols-12 gap-6 mt-8">
+<div class="col-span-8 bg-white p-6 rounded-xl border border-slate-100 shadow-sm relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-section text-blue-900 mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500" data-icon="warning">warning</span> Alertes de préparation
+                        </h4>
+<p class="text-sm text-slate-500 mb-4 max-w-md">3 patients présentent une préparation incomplète ou des contre-indications signalées lors du pré-accueil.</p>
+<div class="flex gap-3">
+<div class="px-4 py-2 bg-orange-50 rounded-lg border border-orange-100">
+<p class="text-[10px] font-bold text-orange-800 uppercase tracking-wider mb-1">M. Alain Herbert</p>
+<p class="text-xs text-orange-600">Préparation hydrique insuffisante.</p>
+</div>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="clinical_notes">clinical_notes</span>
+</div>
+</div>
+<div class="col-span-4 bg-primary-container p-6 rounded-xl shadow-xl flex flex-col justify-between text-white relative">
+<div class="relative z-10">
+<h4 class="font-headline-section mb-1">Capacité du bloc</h4>
+<p class="text-xs text-on-primary-container opacity-80">Occupation actuelle : 75%</p>
+</div>
+<div class="mt-4 relative z-10">
+<div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-white h-full w-3/4 rounded-full"></div>
+</div>
+</div>
+<button class="mt-6 w-full py-2 bg-white text-primary font-bold text-xs rounded-lg hover:bg-surface-bright transition-all active:scale-95">
+                        Optimiser l'agenda
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Action (Suppressed on List screens usually, but here used for 'New Patient' as per logic check) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 primary-gradient text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-90 z-50 group">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="absolute right-full mr-4 bg-blue-900 text-white px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Ajouter un Patient</span>
+</button>
+<script src="../navigation-router.js"></script>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rapport - Endoscopy Staff Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f9f9fd",
+                    "on-tertiary-container": "#ffcfb9",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "outline-variant": "#c2c6d4",
+                    "inverse-on-surface": "#f0f0f4",
+                    "tertiary-container": "#9f4300",
+                    "surface-container": "#edeef1",
+                    "surface-tint": "#005db6",
+                    "on-tertiary-fixed-variant": "#793100",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b2c7f0",
+                    "surface-container-low": "#f3f3f7",
+                    "on-tertiary-fixed": "#341100",
+                    "on-secondary-fixed-variant": "#32476a",
+                    "secondary-fixed": "#d6e3ff",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "secondary-container": "#c0d5ff",
+                    "on-background": "#191c1e",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#793100",
+                    "inverse-primary": "#a9c7ff",
+                    "on-surface": "#191c1e",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e2e6",
+                    "inverse-surface": "#2e3133",
+                    "primary-fixed": "#d6e3ff",
+                    "on-surface-variant": "#424752",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d9dadd",
+                    "surface-container-high": "#e7e8eb",
+                    "on-error": "#ffffff",
+                    "background": "#f9f9fd",
+                    "secondary": "#4a5f83",
+                    "primary-container": "#005eb8",
+                    "on-primary-fixed": "#001b3d",
+                    "surface-variant": "#e2e2e6",
+                    "on-secondary-fixed": "#021b3c",
+                    "surface-bright": "#f9f9fd",
+                    "primary": "#00478d",
+                    "outline": "#727783",
+                    "on-secondary-container": "#475c80",
+                    "on-primary-container": "#c8daff",
+                    "on-primary-fixed-variant": "#00468c",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ghost-border {
+            outline: 1px solid rgba(194, 198, 212, 0.15);
+        }
+        .tonal-glass {
+            background: rgba(243, 243, 247, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #00478d 0%, #005eb8 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface" data-screen="SCREEN_116">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-50 flex flex-col p-4 bg-[#f3f3f7] dark:bg-slate-900/50 backdrop-blur-xl font-['Inter'] text-[0.875rem] font-medium w-64">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<div>
+<h1 class="font-['Manrope'] font-bold text-[#191c1e] dark:text-white text-lg leading-tight">EndoSanctuary</h1>
+<p class="text-xs text-on-surface-variant">Clinical Portal</p>
+</div>
+</div>
+<button class="mb-6 mx-2 py-3 primary-gradient text-white rounded-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add_circle</span>
+            New Procedure
+        </button>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#424752] hover:text-[#005EB8] hover:bg-white/50 transition-colors rounded-lg" href="{{DATA:SCREEN:SCREEN_101}}">
+<span class="material-symbols-outlined">dashboard</span>
+                Tableau de bord
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#424752] hover:text-[#005EB8] hover:bg-white/50 transition-colors rounded-lg" href="{{DATA:SCREEN:SCREEN_75}}">
+<span class="material-symbols-outlined">assignment</span>
+                Fil de prescription
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#424752] hover:text-[#005EB8] hover:bg-white/50 transition-colors rounded-lg" href="{{DATA:SCREEN:SCREEN_109}}">
+<span class="material-symbols-outlined">calendar_month</span>
+                Agenda / Rendez-vous
+            </a><a class="flex items-center gap-3 px-4 py-3 text-[#424752] hover:text-[#005EB8] hover:bg-white/50 transition-colors rounded-lg" href="{{DATA:SCREEN:SCREEN_30}}"><span class="material-symbols-outlined">checklist</span> Check-lists</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white text-[#005EB8] rounded-lg shadow-sm font-bold" href="{{DATA:SCREEN:SCREEN_116}}">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                Rapport
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#424752] hover:text-[#005EB8] hover:bg-white/50 transition-colors rounded-lg" href="{{DATA:SCREEN:SCREEN_125}}">
+<span class="material-symbols-outlined">inventory_2</span>
+                Archives
+            </a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/15 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#424752] hover:text-[#005EB8] hover:bg-white/50 transition-colors rounded-lg" href="#"><span class="material-symbols-outlined">settings</span> Paramètres</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#424752] hover:text-[#005EB8] hover:bg-white/50 transition-colors rounded-lg" href="#"><span class="material-symbols-outlined">logout</span> Déconnexion</a>
+</div>
+</aside>
+<main class="ml-64 min-h-screen">
+<div class="px-8 py-6 space-y-8">
+<!-- Metrics Dashboard Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl ghost-border flex items-center justify-between">
+<div>
+<p class="text-sm text-on-surface-variant font-medium mb-1">Procédures Aujourd'hui</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">14</h3>
+<p class="text-xs text-green-600 font-bold flex items-center gap-1 mt-2"><span class="material-symbols-outlined text-sm">trending_up</span> +12% vs hier</p>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_information</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl ghost-border flex items-center justify-between">
+<div>
+<p class="text-sm text-on-surface-variant font-medium mb-1">Taux de réussite</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">99.2%</h3>
+<p class="text-xs text-on-surface-variant font-medium mt-2">Moyenne historique: 98.4%</p>
+</div>
+<div class="w-12 h-12 bg-secondary-container/30 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl ghost-border flex items-center justify-between">
+<div>
+<p class="text-sm text-on-surface-variant font-medium mb-1">Durée Moyenne</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">24m 15s</h3>
+<p class="text-xs text-tertiary font-bold flex items-center gap-1 mt-2"><span class="material-symbols-outlined text-sm">schedule</span> -2 min depuis la semaine dernière</p>
+</div>
+<div class="w-12 h-12 bg-tertiary-fixed/30 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hourglass_top</span>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="flex flex-wrap items-end gap-6 bg-surface-container-low p-6 rounded-xl">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest ml-1">Date Range</label>
+<div class="flex items-center gap-2 bg-surface-container-lowest rounded-lg px-4 py-2 ghost-border">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">calendar_today</span>
+<input class="bg-transparent border-none text-sm font-medium focus:ring-0 p-0 w-48" type="text" value="Oct 12, 2023 - Oct 19, 2023"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest ml-1">Surgeon</label>
+<select class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm font-medium ghost-border focus:ring-2 focus:ring-surface-tint/20 w-48">
+<option>Tous les chirurgiens</option>
+<option>Dr. Jean Dupont</option>
+<option>Dr. Marie Curie</option>
+<option>Dr. Alan Grant</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest ml-1">Status</label>
+<div class="flex gap-2">
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full transition-all">Tous</button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary text-xs font-bold px-4 py-2 rounded-full ghost-border transition-all">Brouillon</button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary text-xs font-bold px-4 py-2 rounded-full ghost-border transition-all">Validé</button>
+</div>
+</div>
+<a class="ml-auto flex items-center gap-2 text-primary font-bold text-sm hover:underline decoration-2 underline-offset-4" href="{{DATA:SCREEN:SCREEN_116}}"><span class="material-symbols-outlined">filter_list_off</span> Réinitialiser les filtres</a>
+</section>
+<!-- Reports List Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-center px-4">
+<h4 class="font-headline font-bold text-on-surface">Rapports Cliniques (24)</h4>
+<div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> En attente de validation</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span> Finalisé</span>
+</div>
+</div>
+<!-- Report Card 1 -->
+<a class="block transition-transform active:scale-[0.99]" href="{{DATA:SCREEN:SCREEN_125}}"><div class="bg-surface-container-lowest p-5 rounded-xl ghost-border hover:shadow-md transition-all group flex items-center gap-6"><div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-primary text-2xl">person</span></div><div class="flex-1 grid grid-cols-4 gap-4 items-center"><div><p class="text-sm font-bold text-on-surface">LEFEBVRE Sophie</p><p class="text-[11px] text-on-surface-variant font-medium">ID: #END-2023-9942</p></div><div><p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Procédure</p><p class="text-sm font-medium text-on-surface">Colonoscopy + Biopsy</p></div><div><p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Chirurgien</p><div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-slate-200"></div><p class="text-sm font-medium text-on-surface">Dr. Jean Dupont</p></div></div><div class="flex flex-col items-end"><span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold uppercase tracking-wider mb-2">Brouillon</span><p class="text-[10px] text-on-surface-variant">Modifié il y a 2h</p></div></div><div class="flex items-center gap-2 pl-4 border-l border-outline-variant/15"><button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all" title="Review"><span class="material-symbols-outlined">edit_document</span></button><button class="p-2 text-on-surface-variant hover:text-green-600 hover:bg-green-50 rounded-lg transition-all" title="Validate"><span class="material-symbols-outlined">check_circle</span></button></div></div></a>
+<!-- Report Card 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl ghost-border hover:shadow-md transition-all group flex items-center gap-6">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">person</span>
+</div>
+<div class="flex-1 grid grid-cols-4 gap-4 items-center">
+<div>
+<p class="text-sm font-bold text-on-surface">MARCHAND Thomas</p>
+<p class="text-[11px] text-on-surface-variant font-medium">ID: #END-2023-9938</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Procédure</p>
+<p class="text-sm font-medium text-on-surface">Upper Endoscopy</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Chirurgien</p>
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-slate-200"></div>
+<p class="text-sm font-medium text-on-surface">Dr. Claire Durand</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider mb-2">Validé</span>
+<p class="text-[10px] text-on-surface-variant">Finalisé le 18 oct.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 pl-4 border-l border-outline-variant/15">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all" title="View">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary hover:bg-secondary/5 rounded-lg transition-all" title="Print">
+<span class="material-symbols-outlined">print</span>
+</button>
+</div>
+</div>
+<!-- Report Card 3 -->
+<a class="block transition-transform active:scale-[0.99]" href="{{DATA:SCREEN:SCREEN_125}}"><div class="bg-surface-container-lowest p-5 rounded-xl ghost-border hover:shadow-md transition-all group flex items-center gap-6"><div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-primary text-2xl">person</span></div><div class="flex-1 grid grid-cols-4 gap-4 items-center"><div><p class="text-sm font-bold text-on-surface">MARCHAND Thomas</p><p class="text-[11px] text-on-surface-variant font-medium">ID: #END-2023-9938</p></div><div><p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Procédure</p><p class="text-sm font-medium text-on-surface">Upper Endoscopy</p></div><div><p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Chirurgien</p><div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-slate-200"></div><p class="text-sm font-medium text-on-surface">Dr. Claire Durand</p></div></div><div class="flex flex-col items-end"><span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider mb-2">Validé</span><p class="text-[10px] text-on-surface-variant">Finalisé le 18 oct.</p></div></div><div class="flex items-center gap-2 pl-4 border-l border-outline-variant/15"><button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all" title="View"><span class="material-symbols-outlined">visibility</span></button><button class="p-2 text-on-surface-variant hover:text-secondary hover:bg-secondary/5 rounded-lg transition-all" title="Print"><span class="material-symbols-outlined">print</span></button></div></div></a>
+<!-- Report Card 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl ghost-border hover:shadow-md transition-all group flex items-center gap-6 opacity-80">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">person</span>
+</div>
+<div class="flex-1 grid grid-cols-4 gap-4 items-center">
+<div>
+<p class="text-sm font-bold text-on-surface">PETIT Robert</p>
+<p class="text-[11px] text-on-surface-variant font-medium">ID: #END-2023-9930</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Procédure</p>
+<p class="text-sm font-medium text-on-surface">Sigmoidoscopy</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter mb-1">Chirurgien</p>
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-slate-200"></div>
+<p class="text-sm font-medium text-on-surface">Dr. Marie Curie</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider mb-2">Validé</span>
+<p class="text-[10px] text-on-surface-variant">Finalisé le 17 oct.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 pl-4 border-l border-outline-variant/15">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/5 rounded-lg transition-all" title="View">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary hover:bg-secondary/5 rounded-lg transition-all" title="Print">
+<span class="material-symbols-outlined">print</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Pagination/Footer -->
+<footer class="flex items-center justify-between py-6">
+<p class="text-xs text-on-surface-variant font-medium">Affichage de 4 sur 24 rapports cliniques</p>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-bold text-xs">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-bold text-xs">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-bold text-xs">...</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-bold text-xs">6</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</footer>
+</div>
+</main>
+<!-- Floating Quick Actions (Contextual FAB) -->
+<div class="fixed bottom-8 right-8 flex flex-col gap-3">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest ghost-border flex items-center justify-center text-on-surface-variant shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">sync</span>
+</button>
+<button class="w-14 h-14 rounded-full primary-gradient flex items-center justify-center text-white shadow-xl shadow-primary/30 hover:scale-110 transition-transform group">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">file_upload</span>
+<span class="absolute right-full mr-4 bg-inverse-surface text-inverse-on-surface text-xs font-bold py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Importer DICOM</span>
+</button>
+</div>
+<script src="../navigation-router.js"></script>
+</body></html>

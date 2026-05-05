@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Dossier Patient - Endoscopie</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: '#00478d',
+          'primary-container': '#005eb8',
+          'on-primary': '#ffffff',
+          surface: '#f9f9fd',
+          'surface-container': '#edeef1',
+          'surface-container-low': '#f3f3f7',
+          'surface-container-lowest': '#ffffff',
+          'surface-variant': '#e2e2e6',
+          'on-surface': '#191c1e',
+          'on-surface-variant': '#424752',
+          secondary: '#4a5f83',
+          'secondary-container': '#c0d5ff',
+          tertiary: '#793100',
+          'tertiary-fixed': '#ffdbcb',
+          error: '#ba1a1a',
+          'error-container': '#ffdad6',
+          outline: '#737782',
+          'outline-variant': '#c2c6d2'
+        },
+        borderRadius: {
+          DEFAULT: '0.25rem',
+          lg: '0.5rem',
+          xl: '0.75rem',
+          full: '9999px'
+        },
+        fontFamily: {
+          headline: ['Manrope'],
+          body: ['Inter']
+        }
+      }
+    }
+  };
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+<script src="../navigation-router.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased" data-screen="SCREEN_67">
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low border-r border-outline-variant/30 p-4 flex flex-col">
+  <div class="px-2 mb-8 flex items-center gap-3">
+    <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+    </div>
+    <div>
+      <h1 class="font-headline font-extrabold text-on-surface leading-tight">Endoscopie</h1>
+      <p class="text-xs uppercase tracking-wider text-on-surface-variant font-semibold">Dossier patient</p>
+    </div>
+  </div>
+  <nav class="flex-1 space-y-1">
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-colors" href="../tableau_de_bord_prototype_interactif/code.html"><span class="material-symbols-outlined">dashboard</span><span>Tableau de bord</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-colors" href="../fil_de_prescription_prototype_interactif/code.html"><span class="material-symbols-outlined">assignment</span><span>Fil de prescription</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-colors" href="../agenda_prototype_interactif/code.html"><span class="material-symbols-outlined">calendar_month</span><span>Agenda / Rendez-vous</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-colors" href="../liste_patients_menu_check_list_actif/code.html"><span class="material-symbols-outlined">checklist</span><span>Check-lists</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-colors" href="../rapport_prototype_interactif/code.html"><span class="material-symbols-outlined">description</span><span>Rapport</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-colors" href="../archives_prototype_interactif/code.html"><span class="material-symbols-outlined">inventory_2</span><span>Archives</span></a>
+  </nav>
+</aside>
+<main class="ml-64 min-h-screen p-8">
+  <div class="max-w-7xl mx-auto space-y-8">
+    <div class="mb-2 flex items-center justify-start">
+      <a class="inline-flex items-center gap-2 rounded-xl border border-outline-variant/20 bg-white px-5 py-3 text-sm font-bold text-on-surface-variant shadow-sm transition-all hover:border-primary hover:text-primary hover:shadow-md" href="../fil_de_prescription_prototype_interactif/code.html">
+        <span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+        <span>Retour au fil de prescription</span>
+      </a>
+    </div>
+
+    <section class="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex items-center gap-6">
+        <div class="w-20 h-20 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-4xl">person</span>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">Patient</p>
+          <h2 class="font-headline text-3xl font-extrabold tracking-tight">Jean-Pierre Dubois</h2>
+          <p class="text-sm text-on-surface-variant mt-1">Né le 14/05/1958 • 65 ans • ID #END-9821</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-secondary-container text-secondary text-xs font-bold uppercase tracking-wider">Coloscopie diagnostique</span>
+            <span class="px-3 py-1 rounded-full bg-tertiary-fixed text-tertiary text-xs font-bold uppercase tracking-wider">Préparation en cours</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3 w-full lg:w-auto">
+        <a class="px-5 py-3 rounded-xl bg-primary text-white font-bold text-sm text-center hover:opacity-90 transition-opacity" href="../checklist_avant_prototype_interactif/code.html">Démarrer checklist</a>
+        <a class="px-5 py-3 rounded-xl border border-outline-variant/40 text-on-surface-variant font-bold text-sm text-center hover:bg-surface-container-low transition-colors" href="../planification_de_l_examen_harmonis_e_fran_ais/code.html">Planifier l'examen</a>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6 space-y-3">
+        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Statut</p>
+        <p class="text-2xl font-headline font-bold">Prêt pour la phase pré-opératoire</p>
+        <p class="text-sm text-on-surface-variant">Le dossier est accessible depuis tous les modules pour relier la préparation, la procédure et le compte-rendu.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6 space-y-3">
+        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Équipe</p>
+        <p class="text-lg font-bold">Dr. Morel</p>
+        <p class="text-sm text-on-surface-variant">Anesthésiste référent</p>
+        <p class="text-sm text-on-surface-variant">M. Lucas • IADE</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6 space-y-3">
+        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Actions rapides</p>
+        <a class="block px-4 py-2 rounded-lg bg-surface-container-low text-primary font-bold text-sm hover:bg-surface-container transition-colors" href="../demande_de_cpa_fid_le_l_image/code.html">Demande CPA / image</a>
+        <a class="block px-4 py-2 rounded-lg bg-surface-container-low text-primary font-bold text-sm hover:bg-surface-container transition-colors" href="../rapport_prototype_interactif/code.html">Voir le rapport</a>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-headline text-xl font-bold">Parcours de soins</h3>
+        <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Navigation réelle</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a class="rounded-xl border border-outline-variant/20 p-4 hover:bg-surface-container-low transition-colors" href="../agenda_prototype_interactif/code.html">
+          <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Étape 1</p>
+          <p class="font-bold mt-1">Agenda / Rendez-vous</p>
+        </a>
+        <a class="rounded-xl border border-outline-variant/20 p-4 hover:bg-surface-container-low transition-colors" href="../checklist_avant_prototype_interactif/code.html">
+          <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Étape 2</p>
+          <p class="font-bold mt-1">Check-list avant</p>
+        </a>
+        <a class="rounded-xl border border-outline-variant/20 p-4 hover:bg-surface-container-low transition-colors" href="../checklist_apr_s_prototype_interactif/code.html">
+          <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Étape 3</p>
+          <p class="font-bold mt-1">Check-list après</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="../navigation-router.js"></script>
+</body>
+</html>
