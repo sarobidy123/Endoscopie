@@ -1,6 +1,7 @@
 "use client";
 
 import { AppShell } from "@/components/layout/AppShell";
+import StatBadge from "@/components/ui/StatBadge";
 
 export default function CPAPage() {
   return (
@@ -23,12 +24,7 @@ export default function CPAPage() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-2">
                 <h2 className="text-3xl font-black text-on-surface tracking-tight">MARIE LEFEBVRE</h2>
-                <span className="bg-error/10 text-error text-[10px] font-black px-3 py-1 rounded-full flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    warning
-                  </span>
-                  STAT
-                </span>
+                <StatBadge />
               </div>
               <div className="flex items-center gap-4 text-sm font-semibold text-on-surface-variant">
                 <span>ID: #PX-8829-01</span>
@@ -182,7 +178,7 @@ export default function CPAPage() {
                 </div>
                 <div className="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
                   <span className="material-symbols-outlined text-primary mb-3 block text-xl font-bold">priority_high</span>
-                  <p className="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Urgence</p>
+                  <p className="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Urgent</p>
                   <p className="text-sm font-black text-on-surface">Standard (48h)</p>
                 </div>
                 <div className="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
